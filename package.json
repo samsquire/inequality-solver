@@ -1,6 +1,6 @@
 {
   "name": "inequality-solver",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A basic X, Y coordinate inequality solver",
   "main": "index.js",
   "directories": {

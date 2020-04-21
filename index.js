@@ -54,7 +54,7 @@ Problem.prototype.addRule = function (coordinate, rule, left, right) {
 				var current = this.ordering[coordinate][i];
 				if (current === right) {
 					// we need to insert left before right
-					this.ordering[coordinate].splice(i, 0, left);
+					this.ordering[coordinate].splice(i, 0, [left]);
 					break;
 				}
 			}
@@ -64,13 +64,13 @@ Problem.prototype.addRule = function (coordinate, rule, left, right) {
 				var current = this.ordering[coordinate][i];
 				if (current == left) {
 					// we need to insert left before right
-					this.ordering[coordinate].splice(i + 1, 0, right);
+					this.ordering[coordinate].splice(i + 1, 0, [right]);
 					break;
 				}
 			}
 		} else if (needInsertLeft == true && needInsertRight == true) {
-			this.ordering[coordinate].push(left);
-			this.ordering[coordinate].push(right);
+			this.ordering[coordinate].push([left]);
+			this.ordering[coordinate].push([right]);
 		} else if (needInsertLeft == false && needInsertRight == false) {
 			// is left before right
 			var rightPos = this.ordering[coordinate].indexOf(right);
@@ -138,7 +138,7 @@ Problem.prototype.addRule = function (coordinate, rule, left, right) {
 					var innerMove = false;
 					if (ordering == left) {
 
-						this.ordering["y"][i] = [left];
+						this.ordering["y"][i] = [];
 						// look for right in list
 						for (var k = 0 ; k < this.ordering["y"].length; k++) {
 							var inner = this.ordering["y"][k];
@@ -153,7 +153,7 @@ Problem.prototype.addRule = function (coordinate, rule, left, right) {
 
 											this.ordering["y"][i].push(thing);
 										}
-										this.ordering["y"].splice(k, 1);
+                                    this.ordering["y"].splice(k, 1);
 									}
 								}
 
@@ -172,7 +172,7 @@ Problem.prototype.addRule = function (coordinate, rule, left, right) {
 						break;
 					} else if (ordering == right) {
 
-						this.ordering["y"][i] = [right];
+						this.ordering["y"][i] = [];
 						// look for right in list
 						for (var k = 0 ; k < this.ordering["y"].length; k++) {
 							var inner = this.ordering["y"][k];
@@ -187,15 +187,16 @@ Problem.prototype.addRule = function (coordinate, rule, left, right) {
 
 											this.ordering["y"][i].push(thing);
 										}
-										this.ordering["y"].splice(k, 1);
+                                        this.ordering["y"].splice(k, 1);
 									}
 								}
+
 
 							}
 
 						}
 						if (!innerMove) {
-							this.ordering["y"][i].push(left);
+							this.ordering["y"][i].unshift(left);
 						}
 						if (this.ordering["y"].indexOf(left) != -1) {
 							this.ordering["y"].splice(this.ordering["y"].indexOf(left), 1);

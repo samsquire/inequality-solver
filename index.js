@@ -15,7 +15,6 @@ var Declaration = function (name) {
 	this.name = name;
 	this.x = 0;
 	this.y = 0;
-	this.size = "";
 }
 
 Problem.prototype.addDeclaration = function (name) {
@@ -139,7 +138,7 @@ Problem.prototype.addRule = function (coordinate, rule, left, right) {
 					var innerMove = false;
 					if (ordering == left) {
 
-						this.ordering["y"][i] = [];
+						this.ordering["y"][i] = [left];
 						// look for right in list
 						for (var k = 0 ; k < this.ordering["y"].length; k++) {
 							var inner = this.ordering["y"][k];
@@ -173,7 +172,7 @@ Problem.prototype.addRule = function (coordinate, rule, left, right) {
 						break;
 					} else if (ordering == right) {
 
-						this.ordering["y"][i] = [];
+						this.ordering["y"][i] = [right];
 						// look for right in list
 						for (var k = 0 ; k < this.ordering["y"].length; k++) {
 							var inner = this.ordering["y"][k];

@@ -28,8 +28,9 @@ Output
 
 ```
 Solved with 2 runs
-[ Declaration { name: 'A', x: 1, y: 0, size: '' },
-  Declaration { name: 'B', x: 2, y: 0, size: '' },
-  Declaration { name: 'C', x: 3, y: 0, size: '' } ]
+[ Declaration { name: 'A', x: 1, y: 1, size: '' },
+  Declaration { name: 'B', x: 2, y: 2, size: '' },
+  Declaration { name: 'C', x: 3, y: 3, size: '' } ]
+
 ```
 # inequality-solver

@@ -6,6 +6,8 @@ This is a hand rolled inequality solver algorithm for scheduling coordinates in 
 
 You have three objects and A must appear before B and C might be on the right of B.
 
+
+It should be clear that the second argument doesn't do any thing, it's just to make things clearer.
 ```
 
 var Problem = require('inequality-solver').Problem;

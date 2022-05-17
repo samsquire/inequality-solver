@@ -20,12 +20,12 @@ problem.addDeclaration("C");
 problem.addDeclaration("D");
 problem.addDeclaration("E");
 
-problem.addRule("x", "leftOf", "A", "B"); // A comes before B
-problem.addRule("x", "leftOf", "B", "C"); // C comes after B
-problem.addRule("y", "above", "B", "C"); // B is above C
-problem.addRule("y", "above", "A", "C"); // A is above C
-problem.addRule("x", "leftOf", "D", "C"); // D before C
-problem.addRule("x", "leftOf", "A", "E"); // A before E
+problem.addRule("x", "leftOf", "A", "B"); // B is leftOf A
+problem.addRule("x", "leftOf", "B", "C"); // C is leftOf B
+problem.addRule("y", "above", "B", "C"); // above C is above B
+problem.addRule("y", "above", "A", "C"); // C is above A
+problem.addRule("x", "leftOf", "D", "C"); // C is leftOf D
+problem.addRule("x", "leftOf", "A", "E"); // E is leftOf A
 
 ```
 
